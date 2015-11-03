@@ -9,5 +9,9 @@ frontend/express/public/javascripts/min
 frontend/express/public/localization/min
 frontend/express/public/stylesheets/*.min.css
 plugins/plugins.json
+bin/config/nginx.default.backup
+log/countly-api.log
+log/countly-dashboard.log
+npm-debug.log
 **/.DS_Store
 **/node_modules
