@@ -168,6 +168,130 @@ app.get(countlyConfig.path+'/', function (req, res, next) {
     res.redirect(countlyConfig.path+'/login');
 });
 
+app.get(countlyConfig.path+'/mensajes', function (req, res, next) {
+    var wHeight = $(window).height() - 90;
+    var socket = io.connect();
+    var content = $('#filas');
+
+    socket.on('connect', function() {
+        console.log('Conectado - página mensajes!');
+    });
+
+    socket.on('message', function(message){
+        $('.overMessage').fadeOut();
+        console.log(message);
+
+        if ((message.indexOf('"canal_mensaje":"pademobile_log_total"') == -1) &&
+            (message.indexOf('"canal_mensaje":"pademobile_log_mensaje"') == -1)) {
+            return 0;
+        }
+
+        var datos = JSON.parse(message);
+
+        switch(datos.canal_mensaje) {
+
+            case 'pademobile_log_mensaje' :
+
+                var statusIcon;
+                var idTran = datos.codigo_transaccion;
+                var idSubs = idTran.substring(22, 33);
+                var idMess = datos.mensaje.substring(0,20+($( window ).width()-1000)/7.5);
+
+                var fechaHora = datos.fecha+" "+datos.hora.substring(0,8);
+
+                var proveedor = datos.otros_datos.proveedor;
+
+                //Resaltamos la región del envío
+                datos.origen = resaltaPrefijo(datos.origen,'52','#E67E7E');   //MX
+                datos.destino = resaltaPrefijo(datos.destino,'52','#E67E7E');
+                datos.origen = resaltaPrefijo(datos.origen,'34','#FFFFAA');   //ESP
+                datos.destino = resaltaPrefijo(datos.destino,'34','#FFFFAA');
+
+                //Formateamos el JSON anidado correctamente
+                if(!proveedor){
+                    proveedor = datos.otros_datos.toString();
+                    proveedor = proveedor.replace('\\','');
+
+                    proveedor = JSON.parse(proveedor);
+                    proveedor = proveedor.proveedor;
+                }
+
+                var fila = $('#' + datos.codigo_transaccion);
+
+                var t = $('#tabla').DataTable({
+                    "order":            [1, "desc"],
+                    "info":             false,
+                    "paging":           false,
+                    "retrieve":         true,
+                    "searching":        false,
+                    "scrollY":          wHeight,
+                    "scrollCollapse":   true
+                });
+
+                if (datos.estado == '1')
+                    statusIcon = '<i class="greenSign fa fa-check-circle statusIcon"></i>'
+                else if (datos.estado == '-3')
+                    statusIcon = '<span class="helperP"><i class="redSign fa fa-times-circle statusIcon"></i><span class="except">' + datos.excepcion +'</span></span>'
+                else if (datos.estado == '-2')
+                    statusIcon = '<span class="helperP"><i class="redSign fa fa-times-circle statusIcon"></i><span class="except">' + datos.excepcion +'</span></span>'
+                else if (datos.estado == '-1')
+                    statusIcon = '<i class="yellowSign fa fa-exclamation-circle statusIcon"></i>'
+                else if (datos.estado == '0')
+                    statusIcon = '<i class="yellowSign fa fa-question-circle statusIcon"></i>'
+                else
+                    statusIcon = '<i class="yellowSign fa fa-check-circle statusIcon"></i>'
+
+                var tranHelper, messHelper;
+
+                tranHelper = '<span class="helperP">…'+ idSubs +'&#8203;<span class="helperItem">' + datos.codigo_transaccion +'</span></span>';
+                //messHelper = '<span class="helperP">'+ idMess +'&#8203;<span class="helperItem">' + datos.message +'</span></span>';
+                messHelper = "<textarea class='textareaCell' readonly>"+datos.mensaje+"</textarea>"
+
+                if (fila.length != 0) {
+                    console.log('Reemplazamos la fila '+fila);
+                    t.row(fila).data([
+                        statusIcon,
+                        fechaHora,
+                        datos.origen,
+                        datos.destino,
+                        messHelper,
+                        proveedor,
+                        datos.su_referencia,
+                        tranHelper
+                    ]);
+                } else {
+                    t.row.add( {
+                            "0": statusIcon,
+                            "1": fechaHora,
+                            "2": datos.origen,
+                            "3": datos.destino,
+                            "4": messHelper,
+                            "5": proveedor,
+                            "6": datos.su_referencia,
+                            "7": tranHelper,
+                            "DT_RowId": datos.codigo_transaccion
+                        }
+                    ).draw().$();
+                }
+                $(t).fadeOut(300).fadeIn(300);
+                break;
+        }
+    })
+
+    res.redirect(countlyConfig.path+'/mensajes');
+});
+
+//TODO Crear un switch para cada país
+function resaltaPrefijo(numero, prefijo, color){
+    pre = numero.substring(0,2);
+
+    if(pre == prefijo){
+        var suf = numero.substring(2);
+        numero = "<span style='color:"+color+"'>"+pre+"</span>"+suf;
+    }
+
+    return numero;
+};
 //serve app images
 app.get(countlyConfig.path+'/appimages/*', function(req, res) {
 	fs.exists(__dirname + '/public' + req.url, function(exists) {
