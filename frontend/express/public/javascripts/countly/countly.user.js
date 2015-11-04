@@ -297,4 +297,37 @@
         }
     }
 
+
+    countlyUser.getMensajesData = function () {
+
+        var chartData = {chartData:{}, chartDP:{dp:[], ticks:[]}};
+
+        chartData.chartData = countlyCommon.extractRangeData(_userDb, "f", _frequencies, countlyUser.explainFrequencyRange);
+
+        var frequencies = _.pluck(chartData.chartData, "f"),
+            frequencyTotals = _.pluck(chartData.chartData, "t"),
+            chartDP = [
+                {data:[]}
+            ];
+
+        chartDP[0]["data"][0] = [-1, null];
+        chartDP[0]["data"][frequencies.length + 1] = [frequencies.length, null];
+
+        chartData.chartDP.ticks.push([-1, ""]);
+        chartData.chartDP.ticks.push([frequencies.length, ""]);
+
+        for (var i = 0; i < frequencies.length; i++) {
+            chartDP[0]["data"][i + 1] = [i, frequencyTotals[i]];
+            chartData.chartDP.ticks.push([i, frequencies[i]]);
+        }
+
+        chartData.chartDP.dp = chartDP;
+
+        for (var i = 0; i < chartData.chartData.length; i++) {
+            chartData.chartData[i]["percent"] = "<div class='percent-bar' style='width:" + (2 * chartData.chartData[i]["percent"]) + "px;'></div>" + chartData.chartData[i]["percent"] + "%";
+        }
+
+        return {};
+    };
+
 }(window.countlyUser = window.countlyUser || {}, jQuery));

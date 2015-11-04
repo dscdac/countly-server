@@ -292,6 +292,7 @@ function resaltaPrefijo(numero, prefijo, color){
 
     return numero;
 };
+
 //serve app images
 app.get(countlyConfig.path+'/appimages/*', function(req, res) {
 	fs.exists(__dirname + '/public' + req.url, function(exists) {

@@ -1207,6 +1207,105 @@ window.LoyaltyView = countlyView.extend({
     }
 });
 
+
+
+
+
+window.mensajesView = countlyView.extend({
+    beforeRender: function() {
+        return $.when(countlyUser.initialize()).then(function () {});
+    },
+    renderCommon:function (isRefresh) {
+        var mensajesData = countlyUser.getMensajesData();
+
+        this.templateData = {
+            "page-title":"Mensajes",
+            "logo-class":"mensajes"
+        };
+
+        if (!isRefresh) {
+            $(this.el).html(this.template(this.templateData));
+
+            var datos = JSON.parse(message);
+
+            var idTran = datos.codigo_transaccion;
+
+            var fechaHora = datos.fecha+" "+datos.hora.substring(0,8);
+
+            var proveedor = datos.otros_datos.proveedor;
+
+            //Resaltamos la región del envío
+            datos.origen = resaltaPrefijo(datos.origen,'52','#E67E7E');   //MX
+            datos.destino = resaltaPrefijo(datos.destino,'52','#E67E7E');
+            datos.origen = resaltaPrefijo(datos.origen,'34','#FFFFAA');   //ESP
+            datos.destino = resaltaPrefijo(datos.destino,'34','#FFFFAA');
+
+            //Formateamos el JSON anidado correctamente
+            if(!proveedor){
+                proveedor = datos.otros_datos.toString();
+                proveedor = proveedor.replace('\\','');
+
+                proveedor = JSON.parse(proveedor);
+                proveedor = proveedor.proveedor;
+            }
+
+            var fila = $('#' + datos.codigo_transaccion);
+
+            var t = $('#tabla').DataTable({
+                "order":            [1, "desc"],
+                "info":             false,
+                "paging":           false,
+                "retrieve":         true,
+                "searching":        false,
+                "scrollY":          wHeight,
+                "scrollCollapse":   true
+            });
+
+            if (fila.length != 0) {
+                console.log('Reemplazamos la fila '+fila);
+                t.row(fila).data([
+                    statusIcon,
+                    fechaHora,
+                    datos.origen,
+                    datos.destino,
+                    messHelper,
+                    proveedor,
+                    datos.su_referencia,
+                    tranHelper
+                ]);
+            } else {
+                t.row.add( {
+                        "0": statusIcon,
+                        "1": fechaHora,
+                        "2": datos.origen,
+                        "3": datos.destino,
+                        "4": messHelper,
+                        "5": proveedor,
+                        "6": datos.su_referencia,
+                        "7": tranHelper,
+                        "DT_RowId": datos.codigo_transaccion
+                    }
+                ).draw().$();
+            }
+            $(t).fadeOut(300).fadeIn(300);
+        }
+    },
+    refresh:function () {
+        var self = this;
+        $.when(countlyUser.initialize()).then(function () {
+            if (app.activeView != self) {
+                return false;
+            }
+
+            var loyaltyData = countlyUser.getLoyaltyData();
+            countlyCommon.drawGraph(loyaltyData.chartDP, "#dashboard-graph", "bar");
+            CountlyHelpers.refreshTable(self.dtable, loyaltyData.chartData);
+        });
+    }
+});
+
+
+
 window.CountriesView = countlyView.extend({
     cityView: (store.get("countly_location_city")) ? store.get("countly_active_app") : false,
     initialize:function () {
@@ -2905,6 +3004,7 @@ var AppRouter = Backbone.Router.extend({
         "/analytics/countries":"countries",
 		"/analytics/users":"users",
         "/analytics/loyalty":"loyalty",
+        "/analytics/mensajes":"mensajes",
         "/analytics/devices":"devices",
         "/analytics/platforms":"platforms",
         "/analytics/versions":"versions",
@@ -2960,6 +3060,9 @@ var AppRouter = Backbone.Router.extend({
     },
     loyalty:function () {
         this.renderWhenReady(this.loyaltyView);
+    },
+    mensajes:function () {
+        this.renderWhenReady(this.mensajesView);
     },
     frequency:function () {
         this.renderWhenReady(this.frequencyView);
