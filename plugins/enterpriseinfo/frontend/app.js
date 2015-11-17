@@ -2,7 +2,7 @@ var plugin = {},
 	countlyConfig = require('../../../frontend/express/config'),
 	versionInfo = require('../../../frontend/express/version.info'),
 	async = require('async');
-
+/*
 (function (plugin) {
 	plugin.init = function(app, countlyDb){
 		function getTotalUsers(callback) {
@@ -65,5 +65,5 @@ var plugin = {},
 		});
 	};
 }(plugin));
-
+*/
 module.exports = plugin;
