@@ -1,3 +1,4 @@
+/*
 window.EnterpriseView = countlyView.extend({
     initialize:function () {},
 	beforeRender: function() {
@@ -57,3 +58,4 @@ $( document ).ready(function() {
 		CountlyHelpers.notify(msg);
     }
 });
+*/
