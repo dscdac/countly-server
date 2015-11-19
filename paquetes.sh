@@ -1,102 +1,102 @@
-sudo pip install alembic ==0.7.6
-sudo pip install amqp ==1.0.13
-sudo pip install pip install anyjson ==0.3.3
-sudo pip install pip install apns ==1.1.2
-sudo pip install pip install apns-client ==0.2.1
-sudo pip install backports.ssl-match-hostname ==3.4.0.2
-sudo pip install billiard ==3.3.0.20
-sudo pip install boto ==2.38.0
-sudo pip install celery ==3.0.12
-sudo pip install celery-with-redis ==3.0
-sudo pip install certifi ==2015.4.28
-sudo pip install cffi ==1.1.2
-sudo pip install chardet ==2.3.0
-sudo pip install cryptography ==0.9.1
-sudo pip install defusedxml ==0.4.1
-sudo pip install diff-match-patch ==20121119
-sudo pip install Django ==1.4.2
-sudo pip install django-auth-ldap ==1.2.6
-sudo pip install django-bitfield ==1.8.0
-sudo pip install django-classy-tags ==0.3.4.1
-sudo pip install django-cms ==2.3.4
-sudo pip install django-facebook ==5.2.6
-sudo pip install django-mptt ==0.5.2
-sudo pip install django-pipeline ==1.2.2
-sudo pip install django-redis-cache ==0.10.0
-sudo pip install django-redis-sessions ==0.4.0
-sudo pip install django-reversion ==1.6.4
-sudo pip install django-sekizai ==0.6.1
-sudo pip install django-w3c ==0.1.0
-sudo pip install docopt ==0.4.0
-sudo pip install enum34 ==1.0.4
-sudo pip install Envelopes ==0.4
-sudo pip install et-xmlfile ==1.0.0
-sudo pip install facebook-sdk ==0.4.0
-sudo pip install fonttools ==3.0
-sudo pip install gcm-client ==0.1.4
-sudo pip install gitdb ==0.6.4
-sudo pip install GitPython ==0.3.2.1
-sudo pip install google-api-python-client ==1.4.0
-sudo pip install gunicorn ==19.3.0
-sudo pip install html2text ==2015.6.6
-sudo pip install html5lib ==0.99999
-sudo pip install httplib2 ==0.9.1
-sudo pip install idna ==2.0
-sudo pip install ipaddress ==1.0.7
-sudo pip install jdcal ==1.0
-sudo pip install Jinja2 ==2.8
-sudo pip install jwt ==0.3.2
-sudo pip install kombu ==2.5.16
-sudo pip install lxml ==2.3.2
-sudo pip install Mako ==1.0.1
-sudo pip install mandrill ==1.0.57
-sudo pip install Markdown ==2.1.1
-sudo pip install MarkupSafe ==0.23
-sudo pip install mock ==1.0.1
-sudo pip install module ==0.2.1
-sudo pip install nexmomessage ==0.1.1
-sudo pip install nodeenv ==0.13.6
-sudo pip install nodejs ==0.1.1
-sudo pip install oauth2client ==1.4.11
-sudo pip install oauthlib ==1.0.3
-sudo pip install openpyxl ==2.2.5
-sudo pip install optional-django ==0.1.0
-sudo pip install pika ==0.9.14
-sudo pip install Pillow ==2.9.0
-sudo pip install pip ==7.1.2
-sudo pip install poster ==0.8.1
-sudo pip install postmonkey ==1.0b0
-sudo pip install psycopg2 ==2.4.5
-sudo pip install py-w3c ==0.1.2
-sudo pip install py4j ==0.7
-sudo pip install pyasn1 ==0.1.7
-sudo pip install pyasn1-modules ==0.0.5
-sudo pip install pycparser ==2.14
-sudo pip install pycrypto ==2.4.1
-sudo pip install pydns ==2.3.6
-sudo pip install pyflakes ==0.9.1
-sudo pip install pygeoip ==0.2.5
-sudo pip install Pygments ==2.0.2
-sudo pip install pyOpenSSL ==0.15.1
-sudo pip install python-dateutil ==1.5
-sudo pip install python-ldap ==2.4.19
-sudo pip install python-ntlm ==1.1.0
-sudo pip install pytz ==2015.6
-sudo pip install redis ==2.10.3
-sudo pip install requests ==1.2.3
-sudo pip install rsa ==3.1.4
-sudo pip install setproctitle ==1.1.8
-sudo pip install setuptools ==18.2
-sudo pip install simplejson ==3.7.3
-sudo pip install six ==1.9.0
-sudo pip install smmap ==0.9.0
-sudo pip install South ==1.0.2
-sudo pip install SQLAlchemy ==1.0.6
-sudo pip install stripe ==1.19.1
-sudo pip install suds ==0.4
-sudo pip install tornado ==4.2.1
-sudo pip install Twisted ==15.2.1
-sudo pip install uritemplate ==0.6
-sudo pip install wheel ==0.24.0
-sudo pip install xmlrunner ==1.7.7
-sudo pip install zope.interface ==4.1.2
+sudo pip install alembic==0.7.6
+sudo pip install amqp==1.0.13
+sudo pip install pip install anyjson==0.3.3
+sudo pip install pip install apns==1.1.2
+sudo pip install pip install apns-client==0.2.1
+sudo pip install backports.ssl-match-hostname==3.4.0.2
+sudo pip install billiard==3.3.0.20
+sudo pip install boto==2.38.0
+sudo pip install celery==3.0.12
+sudo pip install celery-with-redis==3.0
+sudo pip install certifi==2015.4.28
+sudo pip install cffi==1.1.2
+sudo pip install chardet==2.3.0
+sudo pip install cryptography==0.9.1
+sudo pip install defusedxml==0.4.1
+sudo pip install diff-match-patch==20121119
+sudo pip install Django==1.4.2
+sudo pip install django-auth-ldap==1.2.6
+sudo pip install django-bitfield==1.8.0
+sudo pip install django-classy-tags==0.3.4.1
+sudo pip install django-cms==2.3.4
+sudo pip install django-facebook==5.2.6
+sudo pip install django-mptt==0.5.2
+sudo pip install django-pipeline==1.2.2
+sudo pip install django-redis-cache==0.10.0
+sudo pip install django-redis-sessions==0.4.0
+sudo pip install django-reversion==1.6.4
+sudo pip install django-sekizai==0.6.1
+sudo pip install django-w3c==0.1.0
+sudo pip install docopt==0.4.0
+sudo pip install enum34==1.0.4
+sudo pip install Envelopes==0.4
+sudo pip install et-xmlfile==1.0.0
+sudo pip install facebook-sdk==0.4.0
+sudo pip install fonttools==3.0
+sudo pip install gcm-client==0.1.4
+sudo pip install gitdb==0.6.4
+sudo pip install GitPython==0.3.2.1
+sudo pip install google-api-python-client==1.4.0
+sudo pip install gunicorn==19.3.0
+sudo pip install html2text==2015.6.6
+sudo pip install html5lib==0.99999
+sudo pip install httplib2==0.9.1
+sudo pip install idna==2.0
+sudo pip install ipaddress==1.0.7
+sudo pip install jdcal==1.0
+sudo pip install Jinja2==2.8
+sudo pip install jwt==0.3.2
+sudo pip install kombu==2.5.16
+sudo pip install lxml==2.3.2
+sudo pip install Mako==1.0.1
+sudo pip install mandrill==1.0.57
+sudo pip install Markdown==2.1.1
+sudo pip install MarkupSafe==0.23
+sudo pip install mock==1.0.1
+sudo pip install module==0.2.1
+sudo pip install nexmomessage==0.1.1
+sudo pip install nodeenv==0.13.6
+sudo pip install nodejs==0.1.1
+sudo pip install oauth2client==1.4.11
+sudo pip install oauthlib==1.0.3
+sudo pip install openpyxl==2.2.5
+sudo pip install optional-django==0.1.0
+sudo pip install pika==0.9.14
+sudo pip install Pillow==2.9.0
+sudo pip install pip==7.1.2
+sudo pip install poster==0.8.1
+sudo pip install postmonkey==1.0b0
+sudo pip install psycopg2==2.4.5
+sudo pip install py-w3c==0.1.2
+sudo pip install py4j==0.7
+sudo pip install pyasn1==0.1.7
+sudo pip install pyasn1-modules==0.0.5
+sudo pip install pycparser==2.14
+sudo pip install pycrypto==2.4.1
+sudo pip install pydns==2.3.6
+sudo pip install pyflakes==0.9.1
+sudo pip install pygeoip==0.2.5
+sudo pip install Pygments==2.0.2
+sudo pip install pyOpenSSL==0.15.1
+sudo pip install python-dateutil==1.5
+sudo pip install python-ldap==2.4.19
+sudo pip install python-ntlm==1.1.0
+sudo pip install pytz==2015.6
+sudo pip install redis==2.10.3
+sudo pip install requests==1.2.3
+sudo pip install rsa==3.1.4
+sudo pip install setproctitle==1.1.8
+sudo pip install setuptools==18.2
+sudo pip install simplejson==3.7.3
+sudo pip install six==1.9.0
+sudo pip install smmap==0.9.0
+sudo pip install South==1.0.2
+sudo pip install SQLAlchemy==1.0.6
+sudo pip install stripe==1.19.1
+sudo pip install suds==0.4
+sudo pip install tornado==4.2.1
+sudo pip install Twisted==15.2.1
+sudo pip install uritemplate==0.6
+sudo pip install wheel==0.24.0
+sudo pip install xmlrunner==1.7.7
+sudo pip install zope.interface==4.1.2
