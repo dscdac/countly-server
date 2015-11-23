@@ -1,3 +1,4 @@
+/*
 var plugin = {},
 	countlyConfig = require('../../../frontend/express/config'),
 	plugins = require('../../pluginManager.js');
@@ -7,3 +8,4 @@ var plugin = {},
 }(plugin));
 
 module.exports = plugin;
+*/

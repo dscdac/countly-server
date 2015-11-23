@@ -1,3 +1,4 @@
+/*
 var plugin = {},
 	common = require('../../../api/utils/common.js'),
     plugins = require('../../pluginManager.js');
@@ -8,7 +9,9 @@ var plugin = {},
 	plugins.register("/i", function(ob){
 		
 	});
-	*/
+	/
 }(plugin));
 
 module.exports = plugin;
+
+*/

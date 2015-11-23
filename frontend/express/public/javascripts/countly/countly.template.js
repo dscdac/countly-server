@@ -1210,7 +1210,7 @@ window.LoyaltyView = countlyView.extend({
 
 
 
-
+// TODO insertar vista mensajes
 window.mensajesView = countlyView.extend({
     beforeRender: function() {
         return $.when(countlyUser.initialize()).then(function () {});
@@ -1303,6 +1303,9 @@ window.mensajesView = countlyView.extend({
         });
     }
 });
+
+
+
 
 
 
