@@ -1,102 +1,100 @@
-sudo pip install alembic
-sudo pip install amqp
-sudo pip install anyjson
-sudo pip install apns
-sudo pip install apns-client
-sudo pip install backports.ssl-match-hostname
-sudo pip install billiard
-sudo pip install boto
-sudo pip install celery
-sudo pip install celery-with-redis
-sudo pip install certifi
-sudo pip install cffi
-sudo pip install chardet
-sudo pip install cryptography
-sudo pip install defusedxml
-sudo pip install diff-match-patch
-sudo pip install Django
-sudo pip install django-auth-ldap
-sudo pip install django-bitfield
-sudo pip install django-classy-tags
-sudo pip install django-cms
-sudo pip install django-facebook
-sudo pip install django-mptt
-sudo pip install django-pipeline
-sudo pip install django-redis-cache
-sudo pip install django-redis-sessions
-sudo pip install django-reversion
-sudo pip install django-sekizai
-sudo pip install django-w3c
-sudo pip install docopt
-sudo pip install enum34
-sudo pip install Envelopes
-sudo pip install et-xmlfile
-sudo pip install facebook-sdk
-sudo pip install fonttools
-sudo pip install gcm-client
-sudo pip install gitdb
-sudo pip install GitPython
-sudo pip install google-api-python-client
-sudo pip install gunicorn
-sudo pip install html2text
-sudo pip install html5lib
-sudo pip install httplib2
-sudo pip install idna
-sudo pip install ipaddress
-sudo pip install jdcal
-sudo pip install Jinja2
-sudo pip install jwt
-sudo pip install kombu
-sudo pip install lxml
-sudo pip install Mako
-sudo pip install mandrill
-sudo pip install Markdown
-sudo pip install MarkupSafe
-sudo pip install mock
-sudo pip install module
-sudo pip install nexmomessage
-sudo pip install nodeenv
-sudo pip install nodejs
-sudo pip install oauth2client
-sudo pip install oauthlib
-sudo pip install openpyxl
-sudo pip install optional-django
-sudo pip install pika
-sudo pip install Pillow
-sudo pip install pip
-sudo pip install poster
-sudo pip install postmonkey
-sudo pip install psycopg2
-sudo pip install py-w3c
-sudo pip install py4j
-sudo pip install pyasn1
-sudo pip install pyasn1-modules
-sudo pip install pycparser
-sudo pip install pycrypto
-sudo pip install pydns
-sudo pip install pyflakes
-sudo pip install pygeoip
-sudo pip install Pygments
-sudo pip install pyOpenSSL
-sudo pip install python-dateutil
-sudo pip install python-ldap
-sudo pip install python-ntlm
-sudo pip install pytz
-sudo pip install redis
-sudo pip install requests
-sudo pip install rsa
-sudo pip install setproctitle
-sudo pip install setuptools
-sudo pip install simplejson
-sudo pip install six
-sudo pip install smmap
-sudo pip install South
-sudo pip install SQLAlchemy
-sudo pip install stripe
-sudo pip install suds
-sudo pip install tornado
-sudo pip install Twisted
-sudo pip install uritemplate
-sudo pip install wheel
-sudo pip install xmlrunner
-sudo pip install zope.interface
+alembic==0.7.6
+amqp==1.0.13
+anyjson==0.3.3
+apns==1.1.2
+apns-client==0.2.1
+backports.ssl-match-hostname==3.4.0.2
+billiard==3.3.0.20
+boto==2.38.0
+celery==3.0.12
+celery-with-redis==3.0
+certifi==2015.4.28
+cffi==1.1.2
+chardet==2.3.0
+cryptography==0.9.1
+defusedxml==0.4.1
+diff-match-patch==20121119
+Django==1.4.2
+django-auth-ldap==1.2.6
+django-bitfield==1.8.0
+django-classy-tags==0.3.4.1
+django-cms==2.3.4
+django-facebook==5.2.6
+django-mptt==0.5.2
+django-pipeline==1.2.2
+django-redis-cache==0.10.0
+django-redis-sessions==0.4.0
+django-reversion==1.6.4
+django-sekizai==0.6.1
+django-w3c==0.1.0
+docopt==0.4.0
+enum34==1.0.4
+Envelopes==0.4
+et-xmlfile==1.0.0
+facebook-sdk==0.4.0
+fonttools==3.0
+gcm-client==0.1.4
+gitdb==0.6.4
+GitPython==0.3.2.1
+google-api-python-client==1.4.0
+gunicorn==19.3.0
+html2text==2015.6.6
+html5lib==0.99999
+httplib2==0.9.1
+idna==2.0
+ipaddress==1.0.7
+jdcal==1.0
+Jinja2==2.8
+jwt==0.3.2
+kombu==2.5.16
+lxml==2.3.2
+Mako==1.0.1
+mandrill==1.0.57
+Markdown==2.1.1
+MarkupSafe==0.23
+mock==1.0.1
+module==0.2.1
+-e git+https://github.com/marcuz/libpynexmo.git@c2622568760136f3b4c566c3ed48a5dc88935753#egg=nexmomessage-dev
+nodeenv==0.13.6
+nodejs==0.1.1
+oauth2client==1.4.11
+oauthlib==1.0.3
+openpyxl==2.2.5
+optional-django==0.1.0
+pika==0.9.14
+Pillow==2.9.0
+poster==0.8.1
+postmonkey==1.0b0
+psycopg2==2.4.5
+py-w3c==0.1.2
+py4j==0.7
+pyasn1==0.1.7
+pyasn1-modules==0.0.5
+pycparser==2.14
+pycrypto==2.4.1
+pydns==2.3.6
+pyflakes==0.9.1
+pygeoip==0.2.5
+Pygments==2.0.2
+pyOpenSSL==0.15.1
+python-dateutil==1.5
+python-ldap==2.4.19
+python-ntlm==1.1.0
+pytz==2015.6
+redis==2.10.3
+requests==1.2.3
+rsa==3.1.4
+setproctitle==1.1.8
+simplejson==3.7.3
+six==1.9.0
+smmap==0.9.0
+South==1.0.2
+SQLAlchemy==1.0.6
+stripe==1.19.1
+suds==0.4
+tornado==4.2.1
+Twisted==15.2.1
+uritemplate==0.6
+wheel==0.24.0
+xmlrunner==1.7.7
+zope.interface==4.1.2
